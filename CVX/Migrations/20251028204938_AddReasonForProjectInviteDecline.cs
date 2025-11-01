@@ -1,0 +1,28 @@
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace CVX.Migrations
+{
+    /// <inheritdoc />
+    public partial class AddReasonForProjectInviteDecline : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AddColumn<string>(
+                name: "ReasonForProjectInviteDecline",
+                table: "ProjectMembers",
+                type: "nvarchar(max)",
+                nullable: true);
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropColumn(
+                name: "ReasonForProjectInviteDecline",
+                table: "ProjectMembers");
+        }
+    }
+}
